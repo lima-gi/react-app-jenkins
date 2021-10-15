@@ -26,8 +26,6 @@ pipeline{
         }
 
         stage('Deploy') {
-            when {
-            }
             steps {
                 echo 'deploy'
             }
