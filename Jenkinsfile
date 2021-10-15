@@ -7,8 +7,7 @@ pipeline{
                 nodejs(nodeJSInstallationName: 'Node 14.18.1') {
                     sh 'npm install'
                 }
-            }
-            echo 'install packages'
+            } 
         }
         stage('Build'){
             steps{
@@ -16,7 +15,6 @@ pipeline{
                     sh 'npm build'
                 }
             }
-            echo 'react build'
         }
 
         stage('Test') {
@@ -25,14 +23,15 @@ pipeline{
                     sh 'npm start'
                 }
             }
-            echo 'react run'
         }
 
         stage('Deploy') {
             when {
                 branch 'master'
             }
-            echo 'Deploy'
+            steps {
+                echo 'deploy'
+            }
         }
     }
 }
