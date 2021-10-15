@@ -20,7 +20,7 @@ pipeline{
         stage('Test') {
             steps{
                 nodejs(nodeJSInstallationName: 'Node 14.18.1') {
-                    sh 'npm start'
+                    echo 'run react-app'
                 }
             }
         }
